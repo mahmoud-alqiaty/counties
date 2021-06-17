@@ -13,7 +13,6 @@ export const HomeForm = styled.form `
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
 
     @media screen and (max-width: 840px){
         flex-direction: column;

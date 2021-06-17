@@ -1,21 +1,27 @@
 
-import {FETCH_REQUEST, FETCH_SUCCESS, FETCH_FILTERED,  FETCH_ERROR, FETCH_SEARCH, FETCH_DETAILS } from './Types'
+import {
+  FETCH_REQUEST, 
+  FETCH_SUCCESS, 
+  FETCH_FILTERED,  
+  FETCH_ERROR_All, 
+  FETCH_ERROR_Details, 
+  FETCH_SEARCH, 
+  FETCH_DETAILS 
+} from './Types'
 
 export const initstate = {
-    loading: true,
+    loading: false,
     fetchedCountries: [],
     countryDetails: {},
-    error: ""
+    errorAll: "",
+    errorDetails: ""
 }
-
 export const Reducer = (state, {type, payload})=>{
     switch (type) {
         case FETCH_REQUEST: 
           return{
+            ...state,
             loading: true,
-            fetchedCountries: [],
-            countryDetails: {},
-            error: ""
           }
 
         case FETCH_SUCCESS: 
@@ -23,7 +29,8 @@ export const Reducer = (state, {type, payload})=>{
             loading: false,
             fetchedCountries: payload,
             countryDetails: {},
-            error: ""
+            errorAll: "",
+            errorDetails: ""
           }
 
         case FETCH_FILTERED: 
@@ -31,7 +38,8 @@ export const Reducer = (state, {type, payload})=>{
             loading: false,
             fetchedCountries: payload,
             countryDetails: {},
-            error: ""
+            errorAll: "",
+            errorDetails: ""
           }
 
         case FETCH_SEARCH: 
@@ -39,22 +47,34 @@ export const Reducer = (state, {type, payload})=>{
             loading: false,
             fetchedCountries: payload,
             countryDetails: {},
-            error: ""
+            errorAll: "",
+            errorDetails: ""
           }
 
         case FETCH_DETAILS: 
           return{
+            ...state,
             loading: false,
-            fetchedCountries: {},
             countryDetails: payload,
-            error: ""
+            errorAll: "",
+            errorDetails: ""          
           }
     
-        case FETCH_ERROR: 
+        case FETCH_ERROR_All: 
           return{
             loading: false,
-            fetchedCountries: {},
-            error: payload
+            fetchedCountries: [],
+            countryDetails: {},
+            errorAll: payload,
+            errorDetails: ""
+          }
+        case FETCH_ERROR_Details: 
+          return{
+            ...state,
+            loading: false,
+            countryDetails: {},
+            errorAll: "",
+            errorDetails:payload
           }
     
         default:

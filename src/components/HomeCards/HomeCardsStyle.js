@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const HomeCardsContainer = styled.div `
     width: 100%;
     min-height: 100vh;
-    margin: 50px 0;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .total-result{
-        margin: 15px auto 30px;
+        margin: 0 auto 30px;
         text-align: center;
         font-size: 18px;
         font-weight: 800;

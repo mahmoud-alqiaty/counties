@@ -6,12 +6,19 @@ import {HomeContainer, HomeForm, SearchBox, SelectBox, SearchIcon} from './HomeS
 import HomeCards from '../../components/HomeCards/HomeCards'
 import { CountriesContext } from '../../components/contexts/CountriesComtext/CountriesContext'
 import axios from 'axios'
-import { FETCH_ERROR, FETCH_FILTERED, FETCH_REQUEST, FETCH_SEARCH, FETCH_SUCCESS } from '../../components/contexts/CountriesComtext/Types'
+import { 
+    FETCH_REQUEST, 
+    FETCH_SUCCESS, 
+    FETCH_FILTERED,  
+    FETCH_ERROR_All, 
+    FETCH_ERROR_Details, 
+    FETCH_SEARCH, 
+    FETCH_DETAILS } from '../../components/contexts/CountriesComtext/Types'
 
 
 const Home = () => {
     const {isLight} = useContext(modeContext)
-    const {countries, dispatch} = useContext(CountriesContext)
+    const {fetchedCountries, dispatch} = useContext(CountriesContext)
     
     const [felterrRegion, setFelterrRegion] = useState("")
     const [searched, setSearched] = useState("")
@@ -25,10 +32,15 @@ const Home = () => {
         axios.get(`https://restcountries.eu/rest/v2/all`)
         .then(res=>{
             dispatch({type: FETCH_SUCCESS, payload: res.data})
+            console.log(res.data);
         })
         .catch(err=>{
-            dispatch({type: FETCH_ERROR, payload: err.message})
+            dispatch({type: FETCH_ERROR_All, payload: err.message})
         })
+    }
+
+    const fetchStoredData = ()=>{
+        dispatch({type: FETCH_SUCCESS, payload: fetchedCountries})
     }
 
     const options = ["africa", "Americas", "asia", "europe", "oceania"]
@@ -40,7 +52,7 @@ const Home = () => {
             dispatch({type: FETCH_FILTERED, payload: res.data})
         })
         .catch(err=>{
-            dispatch({type: FETCH_ERROR, payload: err.message})
+            dispatch({type: FETCH_ERROR_All, payload: err.message})
         })
     }
 
@@ -51,7 +63,7 @@ const Home = () => {
             dispatch({type: FETCH_SEARCH, payload: res.data})
         })
         .catch(err=>{
-            dispatch({type: FETCH_ERROR, payload: err.message})
+            dispatch({type: FETCH_ERROR_All, payload: err.message})
         })
     }
 
@@ -62,8 +74,12 @@ const Home = () => {
     }
 
     useEffect(() => {
-        fetchData()
-        return null
+        if(fetchedCountries.length == 0){
+            fetchData()
+        } 
+        else{
+            fetchStoredData()
+        }
     }, [])
 
     return (

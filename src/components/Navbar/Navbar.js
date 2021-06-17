@@ -12,7 +12,6 @@ const NavbarContainer = styled.div `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 3px 5px ${({islight})=> islight? "#eee" : "none"} ;
     font-weight: 800;
     font-size: 18px;
     position: fixed;
@@ -21,6 +20,7 @@ const NavbarContainer = styled.div `
     z-index: 1000;
     background-color: ${({islight})=> islight? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)"};
     color: ${({islight})=> islight? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)"};
+    box-shadow: 0 3px 5px ${({islight})=> islight? "#eee" : "none"} ;
 
     .mode-name{
         cursor: pointer;
