@@ -7,6 +7,7 @@ export const CardContainer = styled(Link) `
     border-radius: 10px;
     overflow: hidden;
     transition: .2s;
+    box-shadow: 0 0 5px hsl(209, 23%, 22%);
     &:hover{
         transform: scale(1.05);
     }

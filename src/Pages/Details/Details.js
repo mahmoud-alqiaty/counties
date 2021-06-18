@@ -1,14 +1,15 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
-
+import { Link, useHistory, useParams } from 'react-router-dom'
 //icons
 import { IoIosArrowRoundBack } from 'react-icons/io'
 
+//Components
+import Loading from '../../components/Loading'
+import Error from '../../components/Error'
+
 // contexts
-import { 
-    CountriesContext 
-} from '../../components/contexts/CountriesComtext/CountriesContext'
+import {CountriesContext} from '../../components/contexts/CountriesComtext/CountriesContext'
 import { modeContext } from '../../components/contexts/ModeContext'
 
 import { 
@@ -38,8 +39,11 @@ const Details = () => {
     const { loading, countryDetails, errorDetails, dispatch} 
     = useContext(CountriesContext)
     console.log( countryDetails);
+    const [countryBorders, setCountryBorders] = useState([])
 
-    const fetchDetails = (name)=>{
+    
+
+    const fetchDetailsByName = (name)=>{
         dispatch({type: FETCH_REQUEST})
         axios.get(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
         .then(res=>{
@@ -51,21 +55,51 @@ const Details = () => {
         })
     }
 
+    const fetchDetailsByCode = (code)=>{
+        dispatch({type: FETCH_REQUEST})
+        axios.get(`https://restcountries.eu/rest/v2/alpha/${code}`)
+        .then(res=>{
+            console.log(res);
+            dispatch({type: FETCH_DETAILS, payload: res.data[0]})
+        })
+        .catch(err=>{
+            console.log(err.message);
+            dispatch({type: FETCH_ERROR_Details, payload: err.message})
+        })
+    }
+
+    const setBorders = ()=>{
+        let borderarray = []
+        countryDetails.borders && countryDetails.borders.map((item)=>{
+            axios.get(`https://restcountries.eu/rest/v2/alpha/${item}`)
+            .then(res=>{
+                let name = res.data.name
+                borderarray.push(name)
+            })
+        })
+        setCountryBorders(borderarray)
+    }    
+    console.log(countryBorders);
+
     
     useEffect(() => {
-        fetchDetails(nativeName)
+        fetchDetailsByName(nativeName)
         return null
     }, [nativeName])
     
+    const history = useHistory()
+    const handleBackClick = ()=>{
+        history.goBack()
+    }
     return (
         <DetailsContainer isLight={isLight}>
-            <BackBtn isLight={isLight}>
+            <BackBtn isLight={isLight} onClick={handleBackClick}>
                 <IoIosArrowRoundBack />
                 back
             </BackBtn>
             {
-                loading? "loading" :
-                errorDetails? errorDetails :
+                loading? <Loading /> :
+                errorDetails? <Error message={errorDetails} /> :
                 <DetailsInnerContent>
                     <DetailsImg src={countryDetails.flag} alt={countryDetails.name} />
                     <DetailsData>
@@ -106,10 +140,14 @@ const Details = () => {
                         <BorderCountries isLight={isLight}>
                             <p>Border countries: </p>
                             <div className="borders">
-                            {
-                               countryDetails.borders && countryDetails.borders.map((item, index)=> 
-                                <span key={index} className="border_Btn">{item}</span>
-                            )}
+                            {   
+                             countryDetails.borders && countryDetails.borders.map((item, index)=>
+                                <Link key={index} className="border_Btn">
+                                    {item}
+                                </Link>
+                             )
+                            }
+                        
                             </div>
                         </BorderCountries>
                     </DetailsData>

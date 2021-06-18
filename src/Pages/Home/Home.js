@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import { modeContext } from '../../components/contexts/ModeContext'
 import { BsSearch } from 'react-icons/bs'
 import { AiOutlineCaretDown } from 'react-icons/ai'
@@ -19,6 +19,7 @@ import {
 const Home = () => {
     const {isLight} = useContext(modeContext)
     const {fetchedCountries, dispatch} = useContext(CountriesContext)
+    const optionsRef = useRef()
     
     const [felterrRegion, setFelterrRegion] = useState("")
     const [searched, setSearched] = useState("")
@@ -26,6 +27,17 @@ const Home = () => {
     const toggleShowOptions = ()=>{
         setShowOptions(!showOptions)
     }
+
+    const handleDocumentclick = (e)=>{
+        if(!optionsRef.current.contains(e.target))
+        setShowOptions(false)
+    }
+    useEffect(() => {
+       document.addEventListener('mousedown', handleDocumentclick)
+       return()=>{
+           document.removeEventListener('mousedown', handleDocumentclick)
+       }
+    }, [])
 
     const fetchData = ()=>{
         dispatch({type: FETCH_REQUEST})
@@ -70,7 +82,6 @@ const Home = () => {
     const handleSubmit = (e)=>{
         e.preventDefault();
         searchCountry(searched)
-        setSearched("")
     }
 
     useEffect(() => {
@@ -97,7 +108,7 @@ const Home = () => {
                     />
                 </SearchBox> 
                 
-                <SelectBox isLight={isLight} showOptions={showOptions}>
+                <SelectBox isLight={isLight} showOptions={showOptions} ref={optionsRef}>
                     <div className="select-header" onClick={toggleShowOptions}>
                         <span>filter by region <span className="selected-region">{felterrRegion}</span></span>
                         <AiOutlineCaretDown />
@@ -110,7 +121,7 @@ const Home = () => {
                                     key={index}
                                     onClick={()=>{
                                         felterByRegion(item);
-                                        toggleShowOptions()
+                                        setShowOptions(false)
                                         setFelterrRegion(item)
                                         }
                                     }

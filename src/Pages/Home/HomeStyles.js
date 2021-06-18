@@ -16,14 +16,14 @@ export const HomeForm = styled.form `
 
     @media screen and (max-width: 840px){
         flex-direction: column;
-        height: 140px;
+        height: 100px;
     }
 `
 export const SearchIcon = styled(BsSearch) `
    cursor: pointer;
 `
 export const SearchBox = styled.div `
-    height: 60px;
+    /* height: 50px; */
     padding: 0 20px;
     border-radius: 7px;
     box-shadow: 0 2px 5px ${({isLight})=> isLight? "#eee" : "none"};
@@ -49,7 +49,7 @@ export const SearchBox = styled.div `
 `
 export const SelectBox = styled.div `
     width: 270px;
-    height: 60px;
+    /* height: 40px; */
     font-size: 16px;
     font-weight: 300;
     color: ${({isLight})=> isLight? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)"};
@@ -89,5 +89,10 @@ export const SelectBox = styled.div `
         &:hover{
             background-color: #eee;
         }
+    }
+
+    @media screen and (max-width: 500px){
+      width: 100%;
+      margin: 10px auto;
     }
 `

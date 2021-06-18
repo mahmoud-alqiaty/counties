@@ -13,6 +13,7 @@ export const initstate = {
     loading: false,
     fetchedCountries: [],
     countryDetails: {},
+    borders: [],
     errorAll: "",
     errorDetails: ""
 }

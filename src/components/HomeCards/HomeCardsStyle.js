@@ -9,7 +9,7 @@ export const HomeCardsContainer = styled.div `
     align-items: center;
 
     .total-result{
-        margin: 0 auto 30px;
+        margin: 30px auto;
         text-align: center;
         font-size: 18px;
         font-weight: 800;

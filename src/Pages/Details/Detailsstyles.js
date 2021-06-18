@@ -39,14 +39,17 @@ export const DetailsInnerContent = styled.div `
 `
 export const DetailsImg = styled.img `
     display: block;
-    width: 350px;
-    height: 330px;
+    width: 400px;
+    height: 400px;
 `
 export const DetailsData = styled.div `
-    width: 80%;
+    width: 60%;
     height: 100%;
     margin-left: 20px;
 
+    @media screen and (max-width: 1200px){
+        width: 80%;
+    }
     @media screen and (max-width: 992px){
         margin-top: 30px;
     }
@@ -61,10 +64,12 @@ export const DetailsInfo = styled.div `
     justify-content: space-between;
    
    .leftSide{
+       width: 50%;
        margin-right: 10px;
    }
    .rightside{
        margin-left: 10px;
+       width: 50%;
    }
     p{
         margin-bottom: 10px;
@@ -80,10 +85,14 @@ export const DetailsInfo = styled.div `
     @media screen and (max-width: 768px){
        flex-direction: column;
        text-align: start;
+
+       .rightside{
+            margin-left: 0px;
+        }
     }
 `
 export const BorderCountries = styled.div `
-     width: 70%;
+    width: 70%;
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
@@ -92,6 +101,11 @@ export const BorderCountries = styled.div `
         margin-bottom: 10px;
         font-weight: 600;
         font-size: 20px;
+    }
+
+    .borders{
+        display: flex;
+        flex-wrap: wrap;
     }
     .border_Btn{
         padding: 5px 25px;
@@ -102,6 +116,9 @@ export const BorderCountries = styled.div `
         cursor: pointer;
     }
 
+    @media screen and (max-width: 1200px){
+       width: 80%;
+    }
     @media screen and (max-width: 500px){
        flex-direction: column;
     }

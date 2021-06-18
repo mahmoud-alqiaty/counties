@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import Card from '../Card/Card'
 import { CountriesContext } from '../contexts/CountriesComtext/CountriesContext'
 import { modeContext } from '../contexts/ModeContext'
+import Error from '../Error'
+import Loading from '../Loading'
 import {HomeCardsContainer, HomeCardsInnerContainer} from './HomeCardsStyle'
 
 const HomeCards = () => {
@@ -10,8 +12,8 @@ const HomeCards = () => {
     return (
         <>
         {
-            loading? "loading..." :
-            errorAll? errorAll :
+            loading? <Loading />:
+            errorAll? <Error message={errorAll} /> :
             <HomeCardsContainer islight={isLight}>
                 <div className="total-result">
                     Total Results: {fetchedCountries.length} <span>Countries</span>
