@@ -40,6 +40,7 @@ export const DetailsInnerContent = styled.div `
 export const DetailsImg = styled.img `
     display: block;
     width: 400px;
+    max-width: 100%;
     height: 400px;
 `
 export const DetailsData = styled.div `
@@ -55,6 +56,9 @@ export const DetailsData = styled.div `
     }
     @media screen and (max-width: 768px){
         width: 100%;
+    }
+    @media screen and (max-width: 500px){
+        margin-left: 0;
     }
 `
 export const DetailsInfo = styled.div `
@@ -86,8 +90,12 @@ export const DetailsInfo = styled.div `
        flex-direction: column;
        text-align: start;
 
+       .leftSide{
+            width: 100%;
+        }
        .rightside{
             margin-left: 0px;
+            width: 100%;
         }
     }
 `
@@ -121,12 +129,10 @@ export const BorderCountries = styled.div `
     @media screen and (max-width: 1200px){
        width: 80%;
     }
+    @media screen and (max-width: 768px){
+       width: 100%;
+    }
     @media screen and (max-width: 500px){
        flex-direction: column;
     }
 `
-// export const BordersInfo = styled.div `
-//     width: 50%;
-//     height: 200px;
-//     margin-left: 10px;
-// `
