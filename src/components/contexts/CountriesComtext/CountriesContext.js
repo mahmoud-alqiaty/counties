@@ -10,6 +10,7 @@ const CountriesProvider = ({children}) => {
             loading: state.loading,
             fetchedCountries: state.fetchedCountries,
             countryDetails: state.countryDetails,
+            borders: state.borders,
             errorAll: state.errorAll,
             errorDetails: state.errorDetails,
             dispatch

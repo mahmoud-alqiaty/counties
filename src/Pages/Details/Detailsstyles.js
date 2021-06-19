@@ -109,12 +109,14 @@ export const BorderCountries = styled.div `
     }
     .border_Btn{
         padding: 5px 25px;
-        margin-left: 10px;
+        margin: 10px 0 0 10px;
         background-color: ${({isLight})=> isLight? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)"};
         color: ${({isLight})=> isLight? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)"};
         box-shadow: 0 0 5px ${({isLight})=> isLight? "#bbb" : "#000"} ;
         cursor: pointer;
+        text-decoration: none;
     }
+
 
     @media screen and (max-width: 1200px){
        width: 80%;

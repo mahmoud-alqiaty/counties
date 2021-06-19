@@ -6,7 +6,8 @@ import {
   FETCH_ERROR_All, 
   FETCH_ERROR_Details, 
   FETCH_SEARCH, 
-  FETCH_DETAILS 
+  FETCH_DETAILS, 
+  FETCH_BORDERS
 } from './Types'
 
 export const initstate = {
@@ -30,6 +31,7 @@ export const Reducer = (state, {type, payload})=>{
             loading: false,
             fetchedCountries: payload,
             countryDetails: {},
+            borders: [],
             errorAll: "",
             errorDetails: ""
           }
@@ -39,6 +41,7 @@ export const Reducer = (state, {type, payload})=>{
             loading: false,
             fetchedCountries: payload,
             countryDetails: {},
+            borders: [],
             errorAll: "",
             errorDetails: ""
           }
@@ -48,6 +51,7 @@ export const Reducer = (state, {type, payload})=>{
             loading: false,
             fetchedCountries: payload,
             countryDetails: {},
+            borders: [],
             errorAll: "",
             errorDetails: ""
           }
@@ -57,6 +61,16 @@ export const Reducer = (state, {type, payload})=>{
             ...state,
             loading: false,
             countryDetails: payload,
+            borders: [],
+            errorAll: "",
+            errorDetails: ""          
+          }
+
+        case FETCH_BORDERS: 
+          return{
+            ...state,
+            loading: false,
+            borders: [...state.borders, payload],
             errorAll: "",
             errorDetails: ""          
           }

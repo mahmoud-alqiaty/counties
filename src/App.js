@@ -31,7 +31,6 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/countries/:nativeName" component={Details} />
-            {/* <Route path="/countries/:bordercode" component={Details} /> */}
           </Switch>
       </CountriesProvider>
     </BrowserRouter>

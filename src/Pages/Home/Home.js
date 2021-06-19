@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from 'react'
 import { modeContext } from '../../components/contexts/ModeContext'
-import { BsSearch } from 'react-icons/bs'
 import { AiOutlineCaretDown } from 'react-icons/ai'
 import {HomeContainer, HomeForm, SearchBox, SelectBox, SearchIcon} from './HomeStyles.js'
 import HomeCards from '../../components/HomeCards/HomeCards'
@@ -11,9 +10,8 @@ import {
     FETCH_SUCCESS, 
     FETCH_FILTERED,  
     FETCH_ERROR_All, 
-    FETCH_ERROR_Details, 
-    FETCH_SEARCH, 
-    FETCH_DETAILS } from '../../components/contexts/CountriesComtext/Types'
+    FETCH_SEARCH 
+} from '../../components/contexts/CountriesComtext/Types'
 
 
 const Home = () => {
@@ -44,7 +42,6 @@ const Home = () => {
         axios.get(`https://restcountries.eu/rest/v2/all`)
         .then(res=>{
             dispatch({type: FETCH_SUCCESS, payload: res.data})
-            console.log(res.data);
         })
         .catch(err=>{
             dispatch({type: FETCH_ERROR_All, payload: err.message})
@@ -85,7 +82,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-        if(fetchedCountries.length == 0){
+        if(fetchedCountries.length === 0){
             fetchData()
         } 
         else{

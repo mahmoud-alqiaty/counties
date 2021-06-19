@@ -35,7 +35,6 @@ const NavLogo = styled(Link) `
 `
 const Navbar = () => {
     const {isLight, toggleMode} = useContext(modeContext)
-    console.log(isLight);
     return (
         <NavbarContainer islight={isLight}>
             <NavLogo to="/" islight={isLight}>
