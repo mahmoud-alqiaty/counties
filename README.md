@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# World countries info webapp
+## Table of contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Overview](#overview)
+  - [Features](#Features)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Overview
+A web app displays the world countries from the REST Countries API.
+### Features
 
-### `npm start`
+Main view:
+-This web app is completely responsive for allscreen sizes 
+- Show a Navbar with button enables to toggle between dark and light mood.
+- Home page view:
+  - Show a search bar in order to make search by country name.
+  - Show a select options in order to filter displayed list by region(ex: Africa, Europe, ...).
+  - Show a list of all world countries on the home page.
+- Single county page view:
+  - Show all details of this county includes its flag.
+  - Show all border countries and make them clickable
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+User is able to:
+- See all countries from the API on the homepage
+- Search for a country using an input field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode (optional)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Screenshot
 
-### `npm test`
+[Desktop view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/Desktop%20view.png)
+[mobile view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/mobile%20view.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Live Site URL: (https://alqiaty-world-countries.netlify.app/)
+- Github repo URL: (https://github.com/mahmoud-alqiaty/countries)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## My process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built with
 
-### `npm run eject`
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
+- [React-router-dom]
+- [Axios]
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Continued development
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+In future projects i will focuse on using TypeScript and Next.js.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Author
+- Github - [Mahmoud Ahmed](https://github.com/mahmoud-alqiaty)
+- LinkedIn - [Mahmoud Ahmed](https://www.linkedin.com/in/mahmoud-ahmed-75551b200/)
+- Frontend Mentor - [Mahmoud Ahmed](https://www.frontendmentor.io/profile/mahmoud-alqiaty)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
