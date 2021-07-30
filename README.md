@@ -35,8 +35,10 @@ User is able to:
 
 ### Screenshot
 
-[Desktop view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/Desktop%20view.png)
-[mobile view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/mobile%20view.png)
+[Desktop in light mood view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/Desktop%20view.png)
+[Desktop in dark mood view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/Desktop%20view.png)
+[mobile in light mood view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/Desktop%20view.png)
+[mobile in dark mood view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/mobile%20view.png)
 
 
 ### Links
