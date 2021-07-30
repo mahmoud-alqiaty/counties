@@ -15,7 +15,7 @@ A web app displays the world countries from the REST Countries API.
 ### Features
 
 Main view:
--This web app is completely responsive for allscreen sizes 
+- This web app is completely responsive for allscreen sizes 
 - Show a Navbar with button enables to toggle between dark and light mood.
 - Home page view:
   - Show a search bar in order to make search by country name.
@@ -42,7 +42,7 @@ User is able to:
 
 - [Desktop-dark](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-dark.png)
 
--[Desktop-light](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-light.png)
+- [Desktop-light](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-light.png)
 
 - [Desktop-dark-single-country](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-dark-single-country.png)
 
@@ -52,7 +52,7 @@ User is able to:
 
 - [Mobile-light](https://github.com/mahmoud-alqiaty/countries/blob/main/design/mobilelight.png)
 
-- [mobile-dark-single-country](https://github.com/mahmoud-alqiaty/countries/blob/main/design/mobile-dark-single-country.png)
+- [Mobile-dark-single-country](https://github.com/mahmoud-alqiaty/countries/blob/main/design/mobile-dark-single-country.png)
 
 
 - [Mobile-light-single-country](https://github.com/mahmoud-alqiaty/countries/blob/main/design/mobile-light-single-country.png)
