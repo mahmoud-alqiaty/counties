@@ -1,4 +1,4 @@
-# World countries info webapp
+# World countries info web app
 ## Table of contents
 
 - [Overview](#overview)
@@ -33,18 +33,30 @@ User is able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode (optional)
 
-### Screenshot
-
-[Desktop in light mood view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/Desktop%20view.png)
-[Desktop in dark mood view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/Desktop%20view.png)
-[mobile in light mood view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/Desktop%20view.png)
-[mobile in dark mood view](https://github.com/mahmoud-alqiaty/giphy/blob/main/ScreenShot/mobile%20view.png)
-
-
 ### Links
 
 - Live Site URL: (https://alqiaty-world-countries.netlify.app/)
 - Github repo URL: (https://github.com/mahmoud-alqiaty/countries)
+
+### Screenshot
+
+- [Desktop-dark](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-dark.png)
+
+-[Desktop-light](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-light.png)
+
+- [Desktop-dark-single-country](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-dark-single-country.png)
+
+- [Desktop-light-single-country](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-light-single-country.png)
+
+- [Mobile-dark](https://github.com/mahmoud-alqiaty/countries/blob/main/design/mobile-dark.png)
+
+- [Mobile-light](https://github.com/mahmoud-alqiaty/countries/blob/main/design/mobilelight.png)
+
+- [mobile-dark-single-country](https://github.com/mahmoud-alqiaty/countries/blob/main/design/mobile-dark-single-country.png)
+
+
+- [Mobile-light-single-country](https://github.com/mahmoud-alqiaty/countries/blob/main/design/mobile-light-single-country.png)
+
 
 ## My process
 
