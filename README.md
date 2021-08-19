@@ -40,7 +40,7 @@ User is able to:
 
 ### Screenshot
 
-- [Desktop-dark](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-dark.png)
+- ![Desktop-dark](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-dark.png)
 
 - [Desktop-light](https://github.com/mahmoud-alqiaty/countries/blob/main/design/Desktop-light.png)
 
